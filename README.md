@@ -1,3 +1,15 @@
-[![stats](https://github-readme-stats.vercel.app/api?username=FokaStudio&count_private=true&show_icons=true&border_color=FFFFFF&&bg_color=DEG,EE9269,EED669&title_color=F8F8F8&border_radius=13)](https://github.com/FokaStudio)
+| <a href="https://github.com/FokaStudio/"><img align="center" src="https://github-readme-stats.vercel.app/api?username=FokaStudio&show_icons=true&include_all_commits=true&theme=buefy&hide_border=true" alt="Anurag's github stats" /></a> | <a href="https://github.com/FokaStudio/"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=FokaStudio&layout=compact&theme=buefy&hide_border=true" /></a> |
+| ------------- | ------------- |
 
-[![stats](https://github-readme-stats.vercel.app/api/top-langs/?username=FokaStudio&langs_count=8&count_private=true&show_icons=true&border_color=FFFFFF&&bg_color=DEG,EE9269,EED669&title_color=F8F8F8&border_radius=13)](https://github.com/FokaStudio)
+#### Top Repositories
+
+
+<a href="https://github.com/FokaStudio/Nether-2.0">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=FokaStudio&repo=Nether-2.0&theme=buefy" />
+</a>
+<a href="https://github.com/FokaStudio/Dungoneery">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=FokaStudio&repo=Dungoneery&theme=buefy" />
+</a>
+
+<br />
+<br />
