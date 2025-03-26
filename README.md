@@ -2,7 +2,7 @@
 
 <br><br>
 <p align="center">
-    Hi, I'm Filip and I go by the name kohy Harukawa on the internet. I make stuff for fun.
+    Hi, I'm Filip and kohy Harukawa is the name I go by on the internet.
 </p>
 <br><br>
 
