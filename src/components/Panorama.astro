@@ -1,0 +1,72 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+></script>
+
+<script type="module">
+	const inputRotate = document.querySelector("#autorotate");
+
+	const scene = new THREE.Scene();
+	const renderer = new THREE.WebGLRenderer();
+	const clock = new THREE.Clock();
+
+	const camera = new THREE.PerspectiveCamera(
+		75,
+		window.innerWidth / window.innerHeight,
+		0.1,
+		1000,
+	);
+
+	const camera_pivot = new THREE.Object3D();
+	const savedRotation = localStorage.getItem("cameraRotationY");
+
+	if (savedRotation !== null) {
+		camera_pivot.rotation.y = parseFloat(savedRotation);
+	}
+
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.domElement.style.position = "fixed";
+	renderer.domElement.style.top = "0";
+	renderer.domElement.style.left = "0";
+	renderer.domElement.style.zIndex = "-1";
+
+	document.body.appendChild(renderer.domElement);
+
+	const loader = new THREE.CubeTextureLoader();
+
+	const texture = loader.load([
+		"/background/panorama_1.png",
+		"/background/panorama_3.png",
+		"/background/panorama_4.png",
+		"/background/panorama_5.png",
+		"/background/panorama_0.png",
+		"/background/panorama_2.png",
+	]);
+
+	scene.background = texture;
+
+	scene.add(camera_pivot);
+	camera_pivot.add(camera);
+
+	camera.position.set(0, 0, 0.1);
+	camera.rotation.x = -0.15;
+
+	function saveRotation() {
+		localStorage.setItem("cameraRotationY", camera_pivot.rotation.y);
+	}
+
+	function animate() {
+		requestAnimationFrame(animate);
+		const delta = clock.getDelta();
+		camera_pivot.rotation.y -= 0.05 * delta;
+		saveRotation();
+		renderer.render(scene, camera);
+	}
+
+	animate();
+
+	window.addEventListener("resize", () => {
+		renderer.setSize(window.innerWidth, window.innerHeight);
+
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();
+	});
+</script>

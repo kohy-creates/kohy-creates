@@ -1,17 +1,21 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import { site } from "../config/site";
+import Panorama from "../components/Panorama.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Panorama />
+<Layout title={site.title}>
+	<div class="page">
+		<div class="card">
+			<img class="avatar" src={site.avatar} alt="avatar" />
+			<h1>{site.title}</h1>
+			<p class="subtitle">{site.subtitle}</p>
+			<div class="links">
+				<a href="/blog">Blog</a>
+				<a href="/projects">Projects</a>
+				<a href={site.socials.github}>GitHub</a>
+			</div>
+		</div>
+	</div>
+</Layout>
