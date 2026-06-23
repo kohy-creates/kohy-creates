@@ -56,7 +56,7 @@
 	function animate() {
 		requestAnimationFrame(animate);
 		const delta = clock.getDelta();
-		camera_pivot.rotation.y -= 0.05 * delta;
+		camera_pivot.rotation.y -= 0.025 * delta;
 		saveRotation();
 		renderer.render(scene, camera);
 	}

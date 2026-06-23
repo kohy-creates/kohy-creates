@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import "../../styles/blog_entry.css";
 
 import { getCollection } from "astro:content";
 
@@ -8,14 +9,41 @@ const posts = await getCollection("blog");
 
 <Layout title="Blog">
 	<h1>Blog</h1>
-
-	<ul>
-		{
-			posts.map((post: (typeof posts)[number]) => (
-				<li>
-					<a href={`/blog/${post.id}.md`}>{post.data.title}</a>
-				</li>
-			))
-		}
-	</ul>
+	<!-- <p class="subtitle">Read all about it!</p> -->
+	<div id="bloglist">
+		<ul>
+			{
+				posts
+					.sort(
+						(a, b) =>
+							b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+					)
+					.map((post) => (
+						<li>
+							<div class="inner">
+								<a href={`/blog/${post.id}`}>
+									{post.data.img && (
+										<img
+											src={`/blog/${post.data.img}.png`}
+											class="thumbnail rounded"
+										/>
+									)}
+									<h2 style="margin-top: 2px;">
+										{post.data.title}
+									</h2>
+									<p style="margin: 0px;" class="subtitle">
+										{new Date(
+											post.data.pubDate,
+										).toDateString()}
+									</p>
+									<p style="text-align: left; padding-left: 20px; padding-right: 20px;">
+										{post.data.description}
+									</p>
+								</a>
+							</div>
+						</li>
+					))
+			}
+		</ul>
+	</div>
 </Layout>

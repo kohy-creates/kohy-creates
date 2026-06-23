@@ -1,0 +1,33 @@
+---
+import "../styles/navbar_footer.css";
+---
+
+<header>
+	<nav class="navbar">
+		<a href="/" class="logo">
+			<img src="/avatar.png" alt="My logo :3" />
+		</a>
+
+		<ul class="nav-links">
+			<li><a href="/"><b>Home</b></a></li>
+			<li><a href="/about"><b>About Me</b></a></li>
+			<li><a href="/blog"><b>Blog</b></a></li>
+			<li><a href="/projects"><b>My Projects</b></a></li>
+		</ul>
+
+		<button class="menu-toggle" aria-label="Toggle menu"> ☰ </button>
+	</nav>
+</header>
+
+<script>
+	const button = document.querySelector(".menu-toggle");
+	const navLinks = document.querySelector(".nav-links");
+
+	button?.addEventListener("click", () => {
+		navLinks?.classList.toggle("active");
+
+		const expanded = button.getAttribute("aria-expanded") == "true";
+
+		button.setAttribute("aria-expanded", String(!expanded));
+	});
+</script>

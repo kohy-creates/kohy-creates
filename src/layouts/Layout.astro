@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css";
+import "../styles/scrollbar.css";
+import Panorama from "../components/Panorama.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
 ---
@@ -12,8 +16,13 @@ const { title } = Astro.props;
 	</head>
 
 	<body>
-		<main>
-			<slot />
-		</main>
+		<Panorama />
+		<Navbar />
+		<div class="page">
+			<div class="card">
+				<slot />
+			</div>
+		</div>
+		<Footer />
 	</body>
 </html>

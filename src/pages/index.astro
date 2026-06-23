@@ -1,21 +1,58 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { site } from "../config/site";
-import Panorama from "../components/Panorama.astro";
+import MinecraftButton from "../components/MinecraftButton.astro";
 ---
 
-<Panorama />
 <Layout title={site.title}>
-	<div class="page">
-		<div class="card">
-			<img class="avatar" src={site.avatar} alt="avatar" />
-			<h1>{site.title}</h1>
-			<p class="subtitle">{site.subtitle}</p>
-			<div class="links">
-				<a href="/blog">Blog</a>
-				<a href="/projects">Projects</a>
-				<a href={site.socials.github}>GitHub</a>
-			</div>
+	<img class="avatar" src={site.avatar} alt="avatar" />
+	<div class="centered">
+		<h1>{site.title}</h1>
+		<p>
+			Hi, I'm <b>Filip</b>, and <b>kohara "Ashley" Harukawa</b> is the name
+			I go by on the internet.
+		</p>
+		<hr />
+	</div>
+	<br />
+	<div class="col">
+		<div class="col1">
+			<p>
+				I started making projects in mid 2020, with my first Minecraft
+				SMP known as AppleCraft. It lasted a week before it took me like
+				half a year to redo it into something known first as CraftIdeal,
+				and then Project: SMP
+			</p>
+		</div>
+		<div class="col2 links">
+			<MinecraftButton
+				text="GitHub"
+				icon="github"
+				href={site.socials.github}
+				width="100%"
+				maxWidth="400px"
+			/>
+			<MinecraftButton
+				text="Discord"
+				icon="discord"
+				href={site.socials.discord}
+				width="100%"
+				maxWidth="400px"
+			/>
+			<MinecraftButton
+				text="Instagram"
+				icon="instagram"
+				href={site.socials.instagram}
+				width="100%"
+				maxWidth="400px"
+			/>
+			<MinecraftButton
+				text="YouTube"
+				icon="youtube"
+				href={site.socials.youtube}
+				width="100%"
+				maxWidth="400px"
+			/>
 		</div>
 	</div>
 </Layout>

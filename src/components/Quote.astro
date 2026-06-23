@@ -1,0 +1,91 @@
+---
+const {
+	text = "Lore impusm dolot sit amet",
+	author = "",
+	authorUrl = "",
+	title = "",
+} = Astro.props;
+---
+
+<div class="quote">
+	<div class="marks-wrapper">
+		<div class="block">
+			{
+				title && (
+					<div class="title">
+						<i>{title}</i>
+					</div>
+				)
+			}
+
+			{
+				text && (
+					<div class="text">
+						<p>
+							<i>{text}</i>
+						</p>
+					</div>
+				)
+			}
+		</div>
+	</div>
+
+	{
+		author && (
+			<div class="author">
+				―{authorUrl ? <a href={authorUrl}>{author}</a> : author}
+			</div>
+		)
+	}
+</div>
+
+<style>
+	.quote {
+		background: var(--bg);
+		border-radius: 5px;
+		border: 2px solid white;
+		margin: 0.5em 0;
+		padding: 0.5em;
+		overflow-y: hidden;
+	}
+
+	.quote .block {
+		display: block;
+	}
+
+	.quote .title {
+		font-size: large;
+		font-weight: bold;
+	}
+
+	.quote .content {
+		font-style: italic;
+	}
+
+	.quote .author {
+		font-weight: bold;
+		text-align: end;
+	}
+
+	.quote .marks-wrapper {
+		display: flex;
+		gap: 5px;
+	}
+
+	.quote .marks-wrapper::before,
+	.quote .marks-wrapper::after {
+		font-size: 100px;
+		line-height: 0px;
+	}
+
+	.quote .marks-wrapper::before {
+		content: "\201C";
+		margin-top: 40px;
+	}
+
+	.quote .marks-wrapper::after {
+		content: "\201D";
+		align-self: end;
+		margin-bottom: -10px;
+	}
+</style>
